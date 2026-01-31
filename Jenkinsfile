@@ -1,4 +1,4 @@
-// create for me a jenkinsfile to run unit test with python in file test_main.py
+// create a jenkinsfile to run unit test with python in file main.py
 // include create a virtual environment and run test in that environment
 pipeline {
     agent any
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     // Run the tests
-                    sh 'source venv/bin/activate && python -m unittest discover -s tests'
+                    sh 'source venv/bin/activate && python -m unittest discover -s tests -p "test_main.py"'
                 }
             }
         }
